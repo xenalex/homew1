@@ -352,7 +352,7 @@ const cardPerson = [{
 }
 ]
 // вариант 1
-// let uniquecardPerson = [...new Set(cardPerson)]
+// let uniquecardPerson = [...new Set(cardPerson[1].name])]
 // console.log(uniquecardPerson);
 
 // вариант 2
@@ -360,12 +360,28 @@ const cardPerson = [{
 // console.log(uniquecardPerson);
 
 // вариант 3
-function uArray(array) {
-    let out = [];
-    for (let i=0, len=array.length; i<len; i++)
-        if (out.indexOf(array[i]) === -1)
-            out.push(array[i]);
-    return out;
+
+// function uArray(array) {
+//     let out = [];
+//     for (let i=0, len=array.length; i<len; i++)
+//         if (out.indexOf(array[i].name) === -1)
+//             out.push(array[i].name);
+//     return out;
+// }
+// let uniquecardPerson = uArray(cardPerson);
+// console.log(uniquecardPerson);
+
+
+for (let j=0;j<cardPerson.length;j++){
+    for (let i=0;i<cardPerson.length;i++){
+        if(i==j){
+            continue;
+        }
+        else if(cardPerson[i].name==cardPerson[j].name)
+        {
+            // console.log(i + ' '+ j)
+            cardPerson.splice(j,1);
+        }
+    }
 }
-let uniquecardPerson = uArray(cardPerson);
-console.log(uniquecardPerson);
+console.log(cardPerson)
