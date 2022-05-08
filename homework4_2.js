@@ -1,3 +1,9 @@
+// Task 2*
+
+// Откройте в VSCode task2.json файл. Скопируйте из него JSONку, вставьте в свой код (присвоив в переменную).
+
+// Дан массив объектов. Каждый объект является идентификационной карточкой человека. Нам нужно хранить только уникальные значения в этом массиве. Реализуйте функцию, которая будет выполнять эту работу.
+
 const cardPerson = [{
     "name": "Leanne Graham",
     "username": "Bret",
@@ -351,26 +357,6 @@ const cardPerson = [{
     }
 }
 ]
-// вариант 1
-// let uniquecardPerson = [...new Set(cardPerson[1].name])]
-// console.log(uniquecardPerson);
-
-// вариант 2
-// let uniquecardPerson = cardPerson.filter((val, ind, arr) => arr.indexOf(val) === ind);
-// console.log(uniquecardPerson);
-
-// вариант 3
-
-// function uArray(array) {
-//     let out = [];
-//     for (let i=0, len=array.length; i<len; i++)
-//         if (out.indexOf(array[i].name) === -1)
-//             out.push(array[i].name);
-//     return out;
-// }
-// let uniquecardPerson = uArray(cardPerson);
-// console.log(uniquecardPerson);
-
 
 for (let j=0;j<cardPerson.length;j++){
     for (let i=0;i<cardPerson.length;i++){
@@ -379,9 +365,10 @@ for (let j=0;j<cardPerson.length;j++){
         }
         else if(cardPerson[i].name==cardPerson[j].name)
         {
-            // console.log(i + ' '+ j)
             cardPerson.splice(j,1);
         }
     }
 }
 console.log(cardPerson)
+
+
